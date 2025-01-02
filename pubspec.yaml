@@ -1,0 +1,39 @@
+name: hydroponic_plants_index
+description: A professional hydroponic plant monitoring system that helps users track and maintain optimal pH levels, temperature, and humidity for their plants.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  shimmer: ^3.0.0
+  shared_preferences: ^2.2.0
+  path_provider: ^2.1.1
+  url_launcher: ^6.1.12
+  device_info_plus: ^9.0.3
+  package_info_plus: ^4.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.2
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo/logo_interface.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/logo/logo_interface.png"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo/
