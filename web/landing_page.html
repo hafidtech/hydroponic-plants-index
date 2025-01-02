@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroponic Plants Index - EURL ALGERIE HYDROPONIC SYSTEMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #45a049;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px 0;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .feature h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .cta-buttons {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .button.secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .button.secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo/logo_interface.png" alt="Hydroponic Plants Index Logo" class="logo">
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Hydroponic Plants Index</h1>
+            <p>Professional hydroponic monitoring system for optimal plant growth and pH management</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="features">
+            <div class="feature">
+                <h3>Real-time Monitoring</h3>
+                <p>Track pH levels, temperature, and humidity in real-time for optimal plant growth conditions</p>
+            </div>
+            <div class="feature">
+                <h3>Plant Database</h3>
+                <p>Access comprehensive information for 15+ common hydroponic plants with ideal pH ranges</p>
+            </div>
+            <div class="feature">
+                <h3>Smart Analytics</h3>
+                <p>Get intelligent insights and recommendations for your hydroponic system</p>
+            </div>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="app/index.html" class="button">Launch Web App</a>
+            <a href="https://www.amazon.com/your-app-link" class="button secondary">Download Android App</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contact-info">
+            <h3>EURL ALGERIE HYDROPONIC SYSTEMS</h3>
+            <p>Email: <a href="mailto:algeriehydroponic02@gmail.com">algeriehydroponic02@gmail.com</a></p>
+            <p>Website: <a href="https://sites.google.com/view/algrie-hydroponic-system/accueil" target="_blank">Visit Our Website</a></p>
+            <p>© 2025 EURL ALGERIE HYDROPONIC SYSTEMS. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
