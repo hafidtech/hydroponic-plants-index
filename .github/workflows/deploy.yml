@@ -3,14 +3,21 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.x'
           channel: 'stable'
@@ -22,10 +29,11 @@ jobs:
         run: flutter pub get
         
       - name: Build
-        run: flutter build web --release
+        run: flutter build web --release --web-renderer canvaskit --base-href /hydroponic-plants-index/
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
+          force_orphan: true
