@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydroponic Plants Index - Versions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #45a049;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
+
+        .version-list {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .version-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .version-item:last-child {
+            border-bottom: none;
+        }
+
+        .version-info {
+            flex: 1;
+        }
+
+        .version-number {
+            font-size: 1.2em;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .version-date {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .version-notes {
+            margin-top: 10px;
+            font-size: 0.95em;
+        }
+
+        .qr-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        #qrcode {
+            margin: 20px auto;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .password-protection {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .password-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .password-form input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .version-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .version-actions {
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Hydroponic Plants Index - Version History</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="version-list">
+            <div class="version-item">
+                <div class="version-info">
+                    <div class="version-number">Version 1.0.0 (Latest)</div>
+                    <div class="version-date">January 2, 2025</div>
+                    <div class="version-notes">
+                        <ul>
+                            <li>Initial release</li>
+                            <li>Real-time pH monitoring</li>
+                            <li>Plant database with optimal pH ranges</li>
+                            <li>Responsive web interface</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="version-actions">
+                    <a href="redirect.html" class="button">Launch App</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="qr-section">
+            <h2>Quick Access QR Code</h2>
+            <div id="qrcode"></div>
+            <p>Scan this code to access the app on your mobile device</p>
+        </div>
+
+        <div class="password-protection">
+            <h2>Access Control</h2>
+            <p>This app is password protected. Contact EURL ALGERIE HYDROPONIC SYSTEMS for access.</p>
+            <div class="password-form">
+                <input type="password" id="accessCode" placeholder="Enter access code">
+                <button class="button" onclick="checkAccess()">Access App</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Generate QR Code
+        window.onload = function() {
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: window.location.href.replace('versions.html', 'redirect.html'),
+                width: 200,
+                height: 200,
+                colorDark : "#4CAF50",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        };
+
+        // Simple password protection
+        function checkAccess() {
+            const accessCode = document.getElementById('accessCode').value;
+            if (accessCode === 'AlgerieHydro2025') { // You should change this to your desired password
+                window.location.href = 'redirect.html';
+            } else {
+                alert('Invalid access code. Please contact EURL ALGERIE HYDROPONIC SYSTEMS for the correct code.');
+            }
+        }
+    </script>
+</body>
+</html>
